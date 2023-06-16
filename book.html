@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AMS</title>
+    <link rel="stylesheet" href="bank.css">
+</head>
+<body>
+    <h1>ACCOUNT MANAGEMENT SYSTEM</h1>
+    <div class="c">
+        <h2 id="new"></h2>
+    </div>
+    <div class="create">
+        <h3>Customer Name <input id="a" type="text" placeholder="Customer Name" required></h3>
+        <h3>Customer Number <input type="text" placeholder="Number" required></h3>
+        <h3>Gender  <select id="male">
+            <option></option>
+            <option>Male</option>
+            <option>Female</option>
+        </select>
+        </h3>
+        <h3>Age <input id="c" type="text" placeholder="Age" required></h3>
+        <h3>E-Mail <input id="d" type="email" placeholder="Username@gmail.com" required></h3>
+        <h3>Date <input id="e" type="date" required></h3>
+        <h3>Account Type <select id="sel">
+            <option></option>
+            <option>Savings Account</option>
+            <option>Current Account</option>
+        </select></h3>
+        <input onclick="check()" type="submit"><input type="submit" value="Reset">
+    </div>
+    <div class="delete">
+        <h3>Enter The Account Number To Delete</h3>
+        <h3>Account Number <input id="a1" type="text" placeholder="Account Number" required></h3>
+        <input id="a1" onclick="del(this.id)" type="submit"><input type="submit" value="Reset">
+    </div>
+    <div class="get">
+        <table>
+            <tr>
+                <th>Account Number</th>
+                <th>Customer Name</th>
+                <th>Customer Number</th>
+                <th>Gender</th>
+                <th>Address</th>
+                <th>Age</th>
+                <th>Mail</th>
+                <th>Account Type</th>
+                <th>Balance</th>
+            </tr>
+            <tr>
+                <td>12345678</td>
+                <td>Sunil Nayak</td>
+                <td>7288082605</td>
+                <td>Male</td>
+                <td>hyderabad</td>
+                <td>21</td>
+                <td>sunil@gmail</td>
+                <td>savings</td>
+                <td>1450</td>
+            </tr>
+
+        </table>
+        <br><br><br><br><br><br><br><br><br><br><br><br><br>
+    </div>
+    <div class="update">
+        <h3>Enter The Account Number To Update</h3>
+        <h3>Account Number <input id="a2" type="text" placeholder="Account Number" required></h3>
+        <input id="a2" onclick="del(this.id)" type="submit"><input type="submit" value="Reset">
+    </div>
+    <div class="single">
+        <h3>Enter Account Number To Get Details</h3>
+        <h3>Account Number <input id="a3" type="text" placeholder="Account Number" required></h3>
+        <input id="a3" onclick="del(this.id)" type="submit"><input type="submit" value="Reset">
+    </div>
+    <div class="deposit">
+        <h3>Account Number <input id="a4" style="margin-left: 70px;" type="text" placeholder="Account Number" required></h3>
+        <h3>Enter Amount To Deposit<input id="a41" style="margin-left: 10px;" type="text" placeholder="Deposit Amount" required></h3>
+        <input id="a4" onclick="depp(this.id)" type="submit" value="Deposit"><input type="submit" value="Clear">
+    </div>
+    <div class="withdraw">
+        <h3>Account Number <input id="a5" style="margin-left: 85px;" type="text" placeholder="Account Number" required></h3>
+        <h3>Enter Amount To Withdraw<input id="a51" style="margin-left: 10px;" type="text" placeholder="Account Number" required></h3>
+        <input id="a5" onclick="depp(this.id)"type="submit" value="Withdraw">
+    </div>
+    <div class="transfer">
+        <h3>From Account Number <input id="a6"  style="margin-left: 29px;" type="text" placeholder="Account Number" required></h3>
+        <h3>To Account Number<input id="a61" style="margin-left: 55px;"type="text" placeholder="Deposit Amount" required></h3>
+        <h3>Enter Amount To Transfer<input id="a62"  style="margin-left: 10px;" type="text" placeholder="Transfer Amount" required></h3>
+        <input id="a6" onclick="tran(this.id)" type="submit" value="Transfer"><input type="submit" value="Clear">
+    </div>
+    <div class="state">
+        <h3>Account Number <input onclick="del()" style="margin-left: 20px;" type="text" placeholder="Account Number" required></h3>
+        <input id="a7" onclick="del(this.id)" type="submit"><input type="submit" value="Clear">
+    </div>
+    <div class="bank">
+        <a><button onclick="first()">Create Account</button></a><br>
+        <a><button onclick="second()">Delete Account</button></a><br>
+        <a><button onclick="update()">Update Account</button></a><br>
+        <a><button onclick="get()">Get All Accounts</button></a><br>
+        <a><button onclick="single()">Get Single Account Details</button></a><br>
+        <a><button onclick="depo()">Deposit Amount</button></a><br>
+        <a><button onclick="withdraw()">Withdraw Amount</button></a><br>
+        <a><button onclick="funds()">Transfer Funds</button></a><br>
+        <a><button onclick="state()">Statement</button></a><br>
+    </div>
+</body>
+<script>
+    var s= document.getElementsByClassName("c");
+    var cr=document.getElementsByClassName("create");
+    var de=document.getElementsByClassName("delete");
+    var up= document.getElementsByClassName("update");
+    var get1= document.getElementsByClassName("get");
+    var singl= document.getElementsByClassName("single");
+    var dep= document.getElementsByClassName("deposit");
+    var withd= document.getElementsByClassName("withdraw");
+    var trans= document.getElementsByClassName("transfer");
+    var ment= document.getElementsByClassName("state");
+    function first(){
+        s[0].style.display="none";
+        de[0].style.display="none";
+        up[0].style.display="none";
+        get1[0].style.display="none";
+        singl[0].style.display="none";
+        dep[0].style.display="none";
+        withd[0].style.display="none";
+        trans[0].style.display="none";
+        ment[0].style.display="none";
+        cr[0].style.display="block";
+    }
+    function second(){
+        s[0].style.display="none";
+        cr[0].style.display="none";
+        up[0].style.display="none";
+        get1[0].style.display="none";
+        singl[0].style.display="none";
+        dep[0].style.display="none";
+        withd[0].style.display="none";
+        trans[0].style.display="none";
+        ment[0].style.display="none";
+        de[0].style.display="block";
+    }
+    function update(){
+        s[0].style.display="none";
+        cr[0].style.display="none";
+        de[0].style.display="none";
+        get1[0].style.display="none";
+        singl[0].style.display="none";
+        dep[0].style.display="none";
+        withd[0].style.display="none";
+        trans[0].style.display="none";
+        ment[0].style.display="none";
+        up[0].style.display="block";
+    }
+    function get(){
+        s[0].style.display="none";
+        cr[0].style.display="none";
+        de[0].style.display="none";
+        up[0].style.display="none";
+        singl[0].style.display="none";
+        dep[0].style.display="none";
+        withd[0].style.display="none";
+        trans[0].style.display="none";
+        ment[0].style.display="none";
+        get1[0].style.display="block";
+    }
+    function single(){
+        s[0].style.display="none";
+        cr[0].style.display="none";
+        de[0].style.display="none";
+        up[0].style.display="none";
+        get1[0].style.display="none";
+        dep[0].style.display="none";
+        withd[0].style.display="none";
+        trans[0].style.display="none";
+        ment[0].style.display="none";
+        singl[0].style.display="block";
+    }
+    function depo(){
+        s[0].style.display="none";
+        cr[0].style.display="none";
+        de[0].style.display="none";
+        up[0].style.display="none";
+        get1[0].style.display="none";
+        singl[0].style.display="none";
+        withd[0].style.display="none";
+        trans[0].style.display="none";
+        ment[0].style.display="none";
+        dep[0].style.display="block";
+    }
+    function withdraw(){
+        s[0].style.display="none";
+        cr[0].style.display="none";
+        de[0].style.display="none";
+        up[0].style.display="none";
+        get1[0].style.display="none";
+        singl[0].style.display="none";
+        dep[0].style.display="none";
+        trans[0].style.display="none";
+        ment[0].style.display="none";
+        withd[0].style.display="block";
+    }
+    function funds(){
+        s[0].style.display="none";
+        cr[0].style.display="none";
+        de[0].style.display="none";
+        up[0].style.display="none";
+        get1[0].style.display="none";
+        singl[0].style.display="none";
+        dep[0].style.display="none";
+        withd[0].style.display="none";
+        ment[0].style.display="none";
+        trans[0].style.display="block";
+    }
+    function state(){
+        s[0].style.display="none";
+        cr[0].style.display="none";
+        de[0].style.display="none";
+        up[0].style.display="none";
+        get1[0].style.display="none";
+        singl[0].style.display="none";
+        dep[0].style.display="none";
+        withd[0].style.display="none";
+        trans[0].style.display="none";
+        ment[0].style.display="block";
+    }
+    function ok(){
+        var val=document.getElementsByTagName("input");
+        var gen=document.getElementsByTagName("select");
+        for(var i=0;i<5;i++){
+            if(val[i].value=="" || gen[0].value=="" || gen[1].value==""){
+                return false;
+            }
+        }
+        return true;
+    }
+    function check(){
+        if(ok()){
+            cr[0].style.display="none";
+            s[0].style.display="block";
+            var ch=document.getElementById("new");
+            ch.innerHTML="Account Created Successfully";
+        }
+        else{
+            alert("please fill all the details..");
+        }
+    }
+    function del(id){
+        var ans=document.getElementById(id);
+        if(ans.value!="" && ans.value.length==11){
+            cr[0].style.display="none";
+            de[0].style.display="none";
+            up[0].style.display="none";
+            get1[0].style.display="none";
+            singl[0].style.display="none";
+            dep[0].style.display="none";
+            trans[0].style.display="none";
+            ment[0].style.display="none";
+            withd[0].style.display="none";
+            s[0].style.display="block";
+            if(id=="a1"){
+                var ch=document.getElementById("new");
+                ch.innerHTML="Account No: "+ans.value+" Deleted Successfully";
+            }
+            if(id=="a2"){
+                var ch=document.getElementById("new");
+                ch.innerHTML="Account No: "+ans.value+" Updated Successfully";
+            }
+            if(id=="a3"){
+                var ch=document.getElementById("new");
+                ch.innerHTML="Account No: "+ans.value+" Not Found..";
+            }
+            if(id=="a7"){
+                var ch=document.getElementById("new");
+                ch.innerHTML="Check Your Mail..";
+            }
+        }
+        else{
+            alert("please fill the details..");
+        }
+    }
+    function depp(id){
+        var ans=document.getElementById(id);
+        var a=document.getElementById(id+"1");
+        if(ans.value!="" && a.value!="" && ans.value.length===11){
+            cr[0].style.display="none";
+            de[0].style.display="none";
+            up[0].style.display="none";
+            get1[0].style.display="none";
+            singl[0].style.display="none";
+            dep[0].style.display="none";
+            trans[0].style.display="none";
+            ment[0].style.display="none";
+            withd[0].style.display="none";
+            s[0].style.display="block";
+            if(id=="a4"){
+                var ch=document.getElementById("new");
+                ch.innerHTML="Rs."+a.value+" Deposited Successfully To Your Account "+ans.value;
+            }
+            if(id=="a5"){
+                var ch=document.getElementById("new");
+                ch.innerHTML=="Rs."+a.value+" Withdrawl Successfully From Your Account "+ans.value;
+            }
+        }
+        else{
+            alert("please fill the details..");
+        }
+    }
+    
+    function tran(id){
+        var ans=document.getElementById(id);
+        var a=document.getElementById(id+"1");
+        var a1=document.getElementById(id+"2");
+        if(ans.value!="" && a.value!="" && a1.value!="" && ans.value.length===11 && a.value.length==11 ){
+            cr[0].style.display="none";
+            de[0].style.display="none";
+            up[0].style.display="none";
+            get1[0].style.display="none";
+            singl[0].style.display="none";
+            dep[0].style.display="none";
+            trans[0].style.display="none";
+            ment[0].style.display="none";
+            withd[0].style.display="none";
+            s[0].style.display="block";
+            var ch=document.getElementById("new");
+            ch.innerHTML="Amount Transfered Successfully from "+ans.value+" To "+a.value;
+        }
+        else{
+            alert("please fill the details..");
+        }
+    }
+</script>
+</html>
